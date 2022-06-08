@@ -1,0 +1,117 @@
+<html>
+<body>
+<head>
+    <title>My Portfolio</title>
+<link rel="stylesheet" href="Portfolio.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script  type="text/javascript">  
+    function validate()
+    {
+        var at = document.myForm.Email.value.indexOf("@");
+        var dot = document.myForm.Email.value.lastIndexOf(".");
+		if(document.myForm.Name.value=="")
+        {
+			alert("Please provide Name !");
+			document.myForm.Name.focus();
+			return false;
+		}
+		else if(document.myForm.Name.value.length<=2)
+        {
+            alert("Name can be minimum 3 character!");
+            document.myForm.Name.focus();
+            return false;
+        }
+        else if(document.myForm.Mobile.value=="")
+        {
+			alert("Please provide mobile number !!");
+			document.myForm.Mobile.focus();
+			return false;
+		}
+		else if(isNaN(document.myForm.Mobile.value)|| document.myForm.Mobile.value.length!=10) 
+        {
+            alert("not a valid mobile number!!");
+			document.myForm.Mobile.focus();
+            return false;
+        }
+        else if(document.myForm.Email.value=="")
+        {
+			alert("Please provide Email !!");
+			document.myForm.Email.focus();
+			return false;
+		}
+        else if(at<1||dot<at+2||dot+2>=document.myForm.Email.value.length )
+        {
+            alert("Please provide a valid Email!!");
+            document.myForm.Email.focus();
+            return false;
+        }
+        else if(document.myForm.country.value=="")
+        {
+			alert("Please Select Country !!");
+			document.myForm.country.focus();
+			return false;
+		}
+        else if(document.myForm.Message.value=="")
+        {
+			alert("Please Put a Message !!");
+			document.myForm.Message.focus();
+			return false;
+		}
+        return (true);
+
+}  
+</script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="home.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="project.html">PROJECTS</a>
+        <a class="active" href="contact.html">CONTACT</a>
+    </div> 
+<body>
+    <center> 
+    <h2>---Get in Touch---</h2>
+ <table width="250" height="400" bgcolor="#ccffe6">
+    <form action="submitpage.html" name = "myForm" onSubmit = "return validate()" method="post";>
+<tr>
+<td>Name : </td>
+<td><input type = "text" name = "Name" size="30" placeholder="Enter name" autofocus></td>
+</tr>
+<tr>
+<tr>
+<td> Moblie :</td>
+<td><input type="text" name="Mobile" size="30" placeholder="Enter mob."></td>
+</tr>
+<tr>
+<td> Email : </td>
+<td> <input type="text" name="Email" size="30" placeholder="Enter mail"></td>
+</tr>
+<tr>
+<td>Country:</td>
+<td><select name="country">
+    <option></option>
+	<option>India</option> 
+	<option>Bangladesh</option> 
+	<option>Sri Lanka</option>
+    <option>Maldives</option> 
+    <option>Nepal</option>
+	<option>Others</option>
+    </select></td>
+</tr>
+<tr>
+<td>Message:</td>
+<td><textarea name="Message" rows="5" cols="26" placeholder="message"></textarea></td>
+</tr>
+<tr> 
+<td align="center" colspan="2"><input type="submit" value="SUBMIT"></td>
+</tr>  
+</form> 
+</table>
+</center> 
+<div class="footer" > 
+    <h4> Copyright &#169; 2022</h4>
+  </div>
+</body>
+</html>
